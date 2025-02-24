@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-"""
+
 entero1 = 10 #entero
 print(entero1)
 entero2 = 30 #entero
@@ -57,22 +57,29 @@ print(len(lista))
 
 for i in range(len(lista)):
     print(lista[i])
-"""
+
 #graficos
 
-eje_y = [0,2,4,6,8,10]
-eje_x = [0,1,2,3,4,5]
+# Datos para la gráfica
+eje_y = [0, 2, 4, 6, 8, 10]  
+eje_x = [0, 1, 2, 3, 4, 5]  
 
-plt.plot(eje_x,eje_y)
-plt.xlabel("Eje X")
-plt.ylabel("Eje Y")
-plt.title("Grafica")
-plt.show()
+# Graficar con color y estilo personalizados
+plt.plot(eje_x, eje_y, color='red', linestyle='--', marker='o', label='Datos')  
 
+# Personalización de títulos y etiquetas  
+plt.xlabel("Eje X", fontsize=12, color='blue')  
+plt.ylabel("Eje Y", fontsize=12, color='green')  
+plt.title("Gráfico Personalizado", fontsize=14, fontweight='bold', color='purple')  
 
-#datos importados
- 
-data = pd.read_csv("paises_capitales.csv")
+# Agregar leyenda  
+plt.legend()  
+
+# Mostrar la gráfica  
+plt.show()  
+
+# Cargar datos desde CSV  
+data = pd.read_csv("paises_capitales.csv")  
 print(data.head())
 
 
